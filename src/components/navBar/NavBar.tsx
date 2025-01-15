@@ -15,14 +15,14 @@ import Button from "@mui/material/Button";
 import useScrollTrigger from "@mui/material/useScrollTrigger";
 import Slide from "@mui/material/Slide";
 import Container from "@mui/material/Container";
-
+import MenuIcon from "@mui/icons-material/Menu";
 interface Props {
     window?: () => Window;
     children?: React.ReactElement<unknown>;
 }
 
 const drawerWidth = 240;
-const navItems = ["Home", "About", "Contact"];
+const navItems = ["首頁", "作品集", "品牌故事", "聯絡我們"];
 
 function HideOnScroll(props: Props) {
     const { children, window } = props;
@@ -48,14 +48,17 @@ export default function DrawerHideAppBar(props: Props) {
     const drawer = (
         <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
             <Typography variant="h6" sx={{ my: 2 }}>
-                MUI
+                茶先 | chaxien
             </Typography>
             <Divider />
             <List>
                 {navItems.map((item) => (
                     <ListItem key={item} disablePadding>
                         <ListItemButton sx={{ textAlign: "center" }}>
-                            <ListItemText primary={item} />
+                            <ListItemText
+                                sx={{ color: "#000" }}
+                                primary={item}
+                            />
                         </ListItemButton>
                     </ListItem>
                 ))}
@@ -70,15 +73,28 @@ export default function DrawerHideAppBar(props: Props) {
         <React.Fragment>
             <CssBaseline />
             <HideOnScroll {...props}>
-                <AppBar component="nav">
+                <AppBar
+                    component="nav"
+                    sx={{
+                        backdropFilter: "blur(10px)", // 毛玻璃效果
+                        backgroundColor: "rgba(0, 0, 0, 0.2)", // 半透明背景
+                        boxShadow: "none", // 可選：移除陰影
+                        color: "#fff", // 可選：調整文字顏色
+                    }}
+                >
                     <Toolbar>
                         <IconButton
-                            color="inherit"
+                            color="success"
                             aria-label="open drawer"
                             edge="start"
                             onClick={handleDrawerToggle}
-                            sx={{ mr: 2, display: { sm: "none" } }}
-                        ></IconButton>
+                            sx={{
+                                mr: 2,
+                                display: { sm: "none" },
+                            }}
+                        >
+                            <MenuIcon />
+                        </IconButton>
                         <Typography
                             variant="h6"
                             component="div"
@@ -87,7 +103,7 @@ export default function DrawerHideAppBar(props: Props) {
                                 display: { xs: "none", sm: "block" },
                             }}
                         >
-                            MUI
+                            茶先 | chaxien
                         </Typography>
                         <Box sx={{ display: { xs: "none", sm: "block" } }}>
                             {navItems.map((item) => (

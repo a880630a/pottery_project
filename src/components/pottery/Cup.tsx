@@ -2,7 +2,7 @@ import ModelLoaderOBJ from "../model/modelLoader/ModelLoaderOBJ";
 import ModelRotate from "../model/modelAction/ModelRotate";
 import { a, SpringValue } from "@react-spring/three";
 import { modelConfig } from "../model/modelConfig";
-
+import texture from "../../assets/clay-texture3.jpg";
 const Cup = ({
     autoRotate = false,
     followMouse = false,
@@ -18,6 +18,7 @@ const Cup = ({
         loadedTexture,
     } = ModelLoaderOBJ({
         path: "./models/vase4.obj",
+        texture: texture,
     });
 
     ModelRotate({

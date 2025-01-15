@@ -8,7 +8,7 @@ export const modelConfig = {
     vase: { component: Vase, position: [0, 0, 10], objectPosition: [1, 1, 0] },
     cup: {
         component: Cup,
-        position: [0, 0, 550],
+        position: [0, 0, 530],
         objectPosition: [0, 0, 500],
     },
     // 未來可以新增更多模型

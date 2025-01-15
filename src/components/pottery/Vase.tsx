@@ -1,4 +1,4 @@
-import texture from "../../assets/marble_texture2.jpg";
+import texture from "../../assets/clay-texture3.jpg";
 import { ModelLoaderSTL } from "../model/modelLoader";
 import ModelRotate from "../model/modelAction/ModelRotate";
 import { a, SpringValue } from "@react-spring/three";

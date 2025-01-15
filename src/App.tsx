@@ -10,7 +10,9 @@ const App = () => {
     return (
         <div className={styles.container}>
             <Router>
-                <NavBar />
+                <div className={styles.navBar}>
+                    <NavBar />
+                </div>
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/works" element={<Works />} />

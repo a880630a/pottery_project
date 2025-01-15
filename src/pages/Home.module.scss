@@ -1,4 +1,34 @@
 .container {
+    position: relative;
     width: 100%;
     height: 100%;
+    overflow: hidden;
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    filter: blur(10px); /* 背景模糊效果 */
+    z-index: 0;
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+}
+
+.content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* 確保內容層在背景上方 */
 }
